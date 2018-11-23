@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="最近有一个文字识别的需求，就在网上找了方法。最后发现还是百度和阿里的好用，最后选择了百度（百度每天50000次免费12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文字识别!">
+<meta property="og:url" content="http://yoursite.com/2018/11/14/文字识别/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近有一个文字识别的需求，就在网上找了方法。最后发现还是百度和阿里的好用，最后选择了百度（百度每天50000次免费12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-23T09:56:19.474Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文字识别!">
+<meta name="twitter:description" content="最近有一个文字识别的需求，就在网上找了方法。最后发现还是百度和阿里的好用，最后选择了百度（百度每天50000次免费12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/14/文字识别/">
+
+
+
+
+
+  <title>文字识别! | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/something" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            something
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/文字识别/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/02366684bf1cdfd0.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">文字识别!</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T18:37:55+08:00">
+                2018-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <pre><code>最近有一个文字识别的需求，就在网上找了方法。最后发现还是百度和阿里的好用，最后选择了百度（百度每天50000次免费<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br></pre></td><td class="code"><pre><span class="line">	需要导入的包：aliyun-java-sdk-core-3.3.1.jar </span><br><span class="line">				  aliyun-java-sdk-dysmsapi-1.0.0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	首先 百度搜索“百度ocr”  </span><br><span class="line"></span><br><span class="line">	右上角 “控制台”→“文字识别”</span><br><span class="line">    (文字识别/text1.jpg)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">	管理应用</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	没有应用则创建</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	输入应用名，应用描述，文字识别包名 选择不需要，点击“立即创建”</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	点击“返回应用列表”</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	这里会得到一个 API Key 和 Secret Key（记住这两个key，后续会用到）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	OK!准备工作做好，下面直接上代码</span><br><span class="line"></span><br><span class="line">	package com;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedInputStream;</span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.ByteArrayOutputStream;</span><br><span class="line">import java.io.DataOutputStream;</span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileInputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.net.HttpURLConnection;</span><br><span class="line">import java.net.URL;</span><br><span class="line">import java.net.URLEncoder;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Map;</span><br><span class="line">import java.util.regex.Matcher;</span><br><span class="line">import java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line">import org.json.JSONObject;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.io.FileNotFoundException;</span><br><span class="line">public class Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">        // 通用识别url</span><br><span class="line">        String otherHost = &quot;https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic&quot;;</span><br><span class="line">        // 本地图片路径</span><br><span class="line">        String filePath = &quot;C:\\Users\\lenovo\\Pictures\\timg.jpg&quot;;</span><br><span class="line">        try &#123;</span><br><span class="line">            byte[] imgData = readFileByBytes(filePath);</span><br><span class="line">            String imgStr = encode(imgData);</span><br><span class="line">            String params = URLEncoder.encode(&quot;image&quot;, &quot;UTF-8&quot;) + &quot;=&quot; + URLEncoder.encode(imgStr, &quot;UTF-8&quot;);</span><br><span class="line">            /**</span><br><span class="line">             * 线上环境access_token有过期时间， 客户端可自行缓存，过期后重新获取。</span><br><span class="line">             */</span><br><span class="line">            String accessToken = getAuth();</span><br><span class="line">            String result = post(otherHost, accessToken, params);</span><br><span class="line">            String words = findStrByReg(result,&quot;\&quot;words\&quot;:\\s\&quot;([\\s\\S]*?)\&quot;&quot;);</span><br><span class="line">            String[] wordsList = words.split(&quot;\&quot;words\&quot;:\\s\&quot;&quot;);</span><br><span class="line">            String ansText = &quot;&quot;;</span><br><span class="line">            for (String string : wordsList) &#123;</span><br><span class="line">            	if(string.endsWith(&quot;\&quot;,&quot;))&#123;</span><br><span class="line">            		string = string.substring(0, string.length()-2);</span><br><span class="line">            		ansText = ansText+&quot;&lt;br&gt;&quot; +string;</span><br><span class="line">            	&#125;else if(string.endsWith(&quot;\&quot;&quot;))&#123;</span><br><span class="line">            		string = string.substring(0, string.length()-1);</span><br><span class="line">            		ansText = ansText+&quot;&lt;br&gt;&quot; +string;</span><br><span class="line">            	&#125;else&#123;</span><br><span class="line">            		ansText = ansText+&quot;&lt;br&gt;&quot; +string;</span><br><span class="line">            	&#125;</span><br><span class="line">			&#125;</span><br><span class="line">            ansText = ansText.replaceAll(&quot;&lt;br&gt;&lt;br&gt;&quot;, &quot;&lt;br&gt;&quot;).replaceAll(&quot;&lt;br&gt;第&quot;, &quot;&lt;br&gt;【第&quot;);</span><br><span class="line">			if(ansText.startsWith(&quot;&lt;br&gt;&quot;))&#123;</span><br><span class="line">				ansText = ansText.substring(4, ansText.length());</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			System.err.println(ansText);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> /**</span><br><span class="line"> * 根据文件路径读取byte[] 数组</span><br><span class="line"> */</span><br><span class="line">public static byte[] readFileByBytes(String filePath) throws IOException &#123;</span><br><span class="line">    File file = new File(filePath);</span><br><span class="line">    if (!file.exists()) &#123;</span><br><span class="line">        throw new FileNotFoundException(filePath);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        ByteArrayOutputStream bos = new ByteArrayOutputStream((int) file.length());</span><br><span class="line">        BufferedInputStream in = null;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            in = new BufferedInputStream(new FileInputStream(file));</span><br><span class="line">            short bufSize = 1024;</span><br><span class="line">            byte[] buffer = new byte[bufSize];</span><br><span class="line">            int len1;</span><br><span class="line">            while (-1 != (len1 = in.read(buffer, 0, bufSize))) &#123;</span><br><span class="line">                bos.write(buffer, 0, len1);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            byte[] var7 = bos.toByteArray();</span><br><span class="line">            return var7;</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                if (in != null) &#123;</span><br><span class="line">                    in.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (IOException var14) &#123;</span><br><span class="line">                var14.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            bos.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> public static String encode(byte[] from) &#123;</span><br><span class="line">	char last2byte = (char) Integer.parseInt(&quot;00000011&quot;, 2);</span><br><span class="line">	char last4byte = (char) Integer.parseInt(&quot;00001111&quot;, 2);</span><br><span class="line">	char last6byte = (char) Integer.parseInt(&quot;00111111&quot;, 2);</span><br><span class="line">	char lead6byte = (char) Integer.parseInt(&quot;11111100&quot;, 2);</span><br><span class="line">	char lead4byte = (char) Integer.parseInt(&quot;11110000&quot;, 2);</span><br><span class="line">	char lead2byte = (char) Integer.parseInt(&quot;11000000&quot;, 2);</span><br><span class="line">    StringBuilder to = new StringBuilder((int) ((double) from.length * 1.34D) + 3);</span><br><span class="line">    char[] encodeTable = new char[]&#123;&apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;G&apos;, &apos;H&apos;, &apos;I&apos;, &apos;J&apos;, &apos;K&apos;, &apos;L&apos;, &apos;M&apos;, &apos;N&apos;, &apos;O&apos;, &apos;P&apos;, &apos;Q&apos;, &apos;R&apos;, &apos;S&apos;, &apos;T&apos;, &apos;U&apos;, &apos;V&apos;, &apos;W&apos;, &apos;X&apos;, &apos;Y&apos;, &apos;Z&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;, &apos;f&apos;, &apos;g&apos;, &apos;h&apos;, &apos;i&apos;, &apos;j&apos;, &apos;k&apos;, &apos;l&apos;, &apos;m&apos;, &apos;n&apos;, &apos;o&apos;, &apos;p&apos;, &apos;q&apos;, &apos;r&apos;, &apos;s&apos;, &apos;t&apos;, &apos;u&apos;, &apos;v&apos;, &apos;w&apos;, &apos;x&apos;, &apos;y&apos;, &apos;z&apos;, &apos;0&apos;, &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;, &apos;+&apos;, &apos;/&apos;&#125;;</span><br><span class="line">    int num = 0;</span><br><span class="line">    char currentByte = 0;</span><br><span class="line"></span><br><span class="line">    int i;</span><br><span class="line">    for (i = 0; i &lt; from.length; ++i) &#123;</span><br><span class="line">        for (num %= 8; num &lt; 8; num += 6) &#123;</span><br><span class="line">            switch (num) &#123;</span><br><span class="line">                case 0:</span><br><span class="line">                    currentByte = (char) (from[i] &amp; lead6byte);</span><br><span class="line">                    currentByte = (char) (currentByte &gt;&gt;&gt; 2);</span><br><span class="line">                case 1:</span><br><span class="line">                case 3:</span><br><span class="line">                case 5:</span><br><span class="line">                default:</span><br><span class="line">                    break;</span><br><span class="line">                case 2:</span><br><span class="line">                    currentByte = (char) (from[i] &amp; last6byte);</span><br><span class="line">                    break;</span><br><span class="line">                case 4:</span><br><span class="line">                    currentByte = (char) (from[i] &amp; last4byte);</span><br><span class="line">                    currentByte = (char) (currentByte &lt;&lt; 2);</span><br><span class="line">                    if (i + 1 &lt; from.length) &#123;</span><br><span class="line">                        currentByte = (char) (currentByte | (from[i + 1] &amp; lead2byte) &gt;&gt;&gt; 6);</span><br><span class="line">                    &#125;</span><br><span class="line">                    break;</span><br><span class="line">                case 6:</span><br><span class="line">                    currentByte = (char) (from[i] &amp; last2byte);</span><br><span class="line">                    currentByte = (char) (currentByte &lt;&lt; 4);</span><br><span class="line">                    if (i + 1 &lt; from.length) &#123;</span><br><span class="line">                        currentByte = (char) (currentByte | (from[i + 1] &amp; lead4byte) &gt;&gt;&gt; 4);</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            to.append(encodeTable[currentByte]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (to.length() % 4 != 0) &#123;</span><br><span class="line">        for (i = 4 - to.length() % 4; i &gt; 0; --i) &#123;</span><br><span class="line">            to.append(&quot;=&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return to.toString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 刚刚获得的两个key放到这</span><br><span class="line"> */</span><br><span class="line">public static String getAuth() &#123;</span><br><span class="line">     // 官网获取的 API Key 更新为你注册的</span><br><span class="line">     String clientId = &quot;a8wToBieaPR2PjoH5AWLcpHP&quot;;</span><br><span class="line">     // 官网获取的 Secret Key 更新为你注册的</span><br><span class="line">     String clientSecret = &quot;Hmpq9DX7dCs9YXUu2M9Wo9NtbBeebCZv&quot;;</span><br><span class="line">     return getAuth(clientId, clientSecret);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public static String post(String requestUrl, String accessToken, String params)</span><br><span class="line">        throws Exception &#123;</span><br><span class="line">    String contentType = &quot;application/x-www-form-urlencoded&quot;;</span><br><span class="line">    return post(requestUrl, accessToken, contentType, params);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static String post(String requestUrl, String accessToken, String contentType, String params)</span><br><span class="line">        throws Exception &#123;</span><br><span class="line">    String encoding = &quot;UTF-8&quot;;</span><br><span class="line">    if (requestUrl.contains(&quot;nlp&quot;)) &#123;</span><br><span class="line">        encoding = &quot;GBK&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return post(requestUrl, accessToken, contentType, params, encoding);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static String post(String requestUrl, String accessToken, String contentType, String params, String encoding)</span><br><span class="line">        throws Exception &#123;</span><br><span class="line">    String url = requestUrl + &quot;?access_token=&quot; + accessToken;</span><br><span class="line">    return postGeneralUrl(url, contentType, params, encoding);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static String postGeneralUrl(String generalUrl, String contentType, String params, String encoding)</span><br><span class="line">        throws Exception &#123;</span><br><span class="line">    URL url = new URL(generalUrl);</span><br><span class="line">    // 打开和URL之间的连接</span><br><span class="line">    HttpURLConnection connection = (HttpURLConnection) url.openConnection();</span><br><span class="line">    connection.setRequestMethod(&quot;POST&quot;);</span><br><span class="line">    // 设置通用的请求属性</span><br><span class="line">    connection.setRequestProperty(&quot;Content-Type&quot;, contentType);</span><br><span class="line">    connection.setRequestProperty(&quot;Connection&quot;, &quot;Keep-Alive&quot;);</span><br><span class="line">    connection.setUseCaches(false);</span><br><span class="line">    connection.setDoOutput(true);</span><br><span class="line">    connection.setDoInput(true);</span><br><span class="line"></span><br><span class="line">    // 得到请求的输出流对象</span><br><span class="line">    DataOutputStream out = new DataOutputStream(connection.getOutputStream());</span><br><span class="line">    out.write(params.getBytes(encoding));</span><br><span class="line">    out.flush();</span><br><span class="line">    out.close();</span><br><span class="line"></span><br><span class="line">    // 建立实际的连接</span><br><span class="line">    connection.connect();</span><br><span class="line">    // 获取所有响应头字段</span><br><span class="line">    Map&lt;String, List&lt;String&gt;&gt; headers = connection.getHeaderFields();</span><br><span class="line">    // 遍历所有的响应头字段</span><br><span class="line">    for (String key : headers.keySet()) &#123;</span><br><span class="line">        System.err.println(key + &quot;---&gt;&quot; + headers.get(key));</span><br><span class="line">    &#125;</span><br><span class="line">    // 定义 BufferedReader输入流来读取URL的响应</span><br><span class="line">    BufferedReader in = null;</span><br><span class="line">    in = new BufferedReader(</span><br><span class="line">            new InputStreamReader(connection.getInputStream(), encoding));</span><br><span class="line">    String result = &quot;&quot;;</span><br><span class="line">    String getLine;</span><br><span class="line">    while ((getLine = in.readLine()) != null) &#123;</span><br><span class="line">        result += getLine;</span><br><span class="line">    &#125;</span><br><span class="line">    in.close();</span><br><span class="line">    System.err.println(&quot;result:&quot; + result);</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> /**</span><br><span class="line"> * 通过正则表达式在字符串中查找符合条件的结果，拼接成字符串返回；</span><br><span class="line"> */</span><br><span class="line"> private static String findStrByReg(String str,String reg)&#123;</span><br><span class="line">   		</span><br><span class="line">		Pattern p_cut;  </span><br><span class="line">		Matcher m_cut; </span><br><span class="line">		String cut = &quot;&quot; ;</span><br><span class="line">		String regEx_cut = reg;</span><br><span class="line">		p_cut = Pattern.compile(regEx_cut, Pattern.CASE_INSENSITIVE);  </span><br><span class="line">		m_cut = p_cut.matcher(str);  </span><br><span class="line">		while (m_cut.find()) &#123;  </span><br><span class="line">			cut = cut + &quot;,&quot; + m_cut.group();  </span><br><span class="line">		&#125; </span><br><span class="line">		if(cut.contains(&quot;,&quot;))&#123;</span><br><span class="line">			cut = cut.substring(1);</span><br><span class="line">		&#125;</span><br><span class="line">		return cut;</span><br><span class="line">	&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 获取api访问token</span><br><span class="line"> *该token有一定的有效期，需要自行管理，当失效时需重新获取.</span><br><span class="line"> * @param ak - 百度云官网获取的 API Key</span><br><span class="line"> * @param sk - 百度云官网获取的 Securet Key</span><br><span class="line"> * @return assess_token 示例：</span><br><span class="line"> * &quot;24.460da4889caad24cccdb1fea17221975.2592000.1491995545.282335-1234567&quot;</span><br><span class="line"> */</span><br><span class="line">	public static String getAuth(String ak, String sk) &#123;</span><br><span class="line">     // 获取token地址</span><br><span class="line">     String authHost = &quot;https://aip.baidubce.com/oauth/2.0/token?&quot;;</span><br><span class="line">     String getAccessTokenUrl = authHost</span><br><span class="line">             // 1. grant_type为固定参数</span><br><span class="line">             + &quot;grant_type=client_credentials&quot;</span><br><span class="line">             // 2. 官网获取的 API Key</span><br><span class="line">             + &quot;&amp;client_id=&quot; + ak</span><br><span class="line">             // 3. 官网获取的 Secret Key</span><br><span class="line">             + &quot;&amp;client_secret=&quot; + sk;</span><br><span class="line">     try &#123;</span><br><span class="line">         URL realUrl = new URL(getAccessTokenUrl);</span><br><span class="line">         // 打开和URL之间的连接</span><br><span class="line">         HttpURLConnection connection = (HttpURLConnection) realUrl.openConnection();</span><br><span class="line">         connection.setRequestMethod(&quot;GET&quot;);</span><br><span class="line">         connection.connect();</span><br><span class="line">         // 获取所有响应头字段</span><br><span class="line">         Map&lt;String, List&lt;String&gt;&gt; map = connection.getHeaderFields();</span><br><span class="line">         // 遍历所有的响应头字段</span><br><span class="line">         /*for (String key : map.keySet()) &#123;</span><br><span class="line">             System.err.println(key + &quot;---&gt;&quot; + map.get(key));</span><br><span class="line">         &#125;*/</span><br><span class="line">         // 定义 BufferedReader输入流来读取URL的响应</span><br><span class="line">         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));</span><br><span class="line">         String result = &quot;&quot;;</span><br><span class="line">         String line;</span><br><span class="line">         while ((line = in.readLine()) != null) &#123;</span><br><span class="line">             result += line;</span><br><span class="line">         &#125;</span><br><span class="line">         /**</span><br><span class="line">          * 返回结果示例</span><br><span class="line">          */</span><br><span class="line">         JSONObject jsonObject = new JSONObject(result);</span><br><span class="line">         String access_token = jsonObject.getString(&quot;access_token&quot;);</span><br><span class="line">         return access_token;</span><br><span class="line">     &#125; catch (Exception e) &#123;</span><br><span class="line">         System.err.printf(&quot;获取token失败！&quot;);</span><br><span class="line">         e.printStackTrace(System.err);</span><br><span class="line">     &#125;</span><br><span class="line">     return null;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">本人第一次写博客，有什么错误的地方，还请大神们多多指点</span><br></pre></td></tr></table></figure>
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/15/my-first-blog/" rel="prev" title="my first blog">
+                my first blog <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/02366684bf1cdfd0.jpg" alt="John Doe">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
